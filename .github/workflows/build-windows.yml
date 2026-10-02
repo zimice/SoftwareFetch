@@ -1,0 +1,45 @@
+name: Build and test Windows executable
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python SoftwareFetch.py --list
+  windows-exe:
+    needs: test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements-build.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m PyInstaller --noconfirm --clean --onefile --console --name SoftwareFetch --add-data "config.json;." SoftwareFetch.py
+      - run: Copy-Item config.json, Run-Windows.cmd -Destination dist/
+        shell: pwsh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SoftwareFetch-Windows-x64
+          path: |
+            dist/SoftwareFetch.exe
+            dist/config.json
+            dist/Run-Windows.cmd
+          if-no-files-found: error

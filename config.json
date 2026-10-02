@@ -1,0 +1,253 @@
+{
+  "destination": "install",
+  "workers": 6,
+  "apps": [
+    {
+      "name": "7zip",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://www.7-zip.org/download.html"
+        ],
+        "filename_regex": "7z[0-9]+-x64\\.exe"
+      }
+    },
+    {
+      "name": "Brave",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://laptop-updates.brave.com/latest/winx64"
+      }
+    },
+    {
+      "name": "Bitwarden",
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://bitwarden.com/download/?app=desktop&platform=windows&variant=exe"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Firefox",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+      }
+    },
+    {
+      "name": "MEGAsync",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://mega.nz/MEGAsyncSetup64.exe"
+      }
+    },
+    {
+      "name": "Python",
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://www.python.org/downloads/windows/"
+        ],
+        "filename_regex": "python-3\\.[0-9.]+-amd64\\.exe"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Notion",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://www.notion.so/desktop/windows/download"
+      }
+    },
+    {
+      "name": "MobaXterm",
+      "extension": ".zip",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://mobaxterm.mobatek.net/download-home-edition.html"
+        ],
+        "filename_regex": "MobaXterm_Installer_v[0-9.]+\\.zip"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Office",
+      "extension": ".url",
+      "source": {
+        "type": "manual",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/download-office"
+      },
+      "enabled": true
+    },
+    {
+      "name": "VS Code",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user"
+      }
+    },
+    {
+      "name": "Git Bash",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "github_release",
+        "repo": "git-for-windows/git",
+        "filename_regex": "Git-[0-9.]+-64-bit\\.exe"
+      }
+    },
+    {
+      "name": "KeePass",
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://keepass.info/download.html"
+        ],
+        "filename_regex": "KeePass-2\\.[0-9.]+-Setup\\.exe"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Rufus Portable",
+      "enabled": true,
+      "extension": ".exe",
+      "folder": "tools",
+      "source": {
+        "type": "github_release",
+        "repo": "pbatard/rufus",
+        "filename_regex": "rufus-[0-9.]+p\\.exe"
+      }
+    },
+    {
+      "name": "Open Hardware Monitor",
+      "enabled": true,
+      "extension": ".zip",
+      "folder": "tools",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://openhardwaremonitor.org/downloads/"
+        ],
+        "filename_regex": "openhardwaremonitor-v[0-9.]+\\.zip"
+      }
+    },
+    {
+      "name": "Tor Browser",
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://download.torproject.org/tor-browser-for-desktop/"
+        ],
+        "filename_regex": "tor-browser-windows-x86_64-portable-[0-9.]+\\.exe"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Discord",
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://discord.com/api/download?platform=win"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Steam",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe"
+      }
+    },
+    {
+      "name": "DB Browser for SQLite",
+      "extension": ".msi",
+      "source": {
+        "type": "github_release",
+        "repo": "sqlitebrowser/sqlitebrowser",
+        "filename_regex": "DB\\.Browser\\.for\\.SQLite-v[0-9.]+-win64\\.msi"
+      },
+      "enabled": true
+    },
+    {
+      "name": "VirtualBox",
+      "enabled": true,
+      "extension": ".exe",
+      "requires": [
+        "Visual C++ Redistributable x64"
+      ],
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://www.virtualbox.org/wiki/Downloads",
+          "https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html"
+        ],
+        "filename_regex": "VirtualBox-[0-9.]+-[0-9]+-Win\\.exe"
+      }
+    },
+    {
+      "name": "VLC",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://download.videolan.org/vlc/last/win64/",
+          "https://get.videolan.org/vlc/last/win64/"
+        ],
+        "filename_regex": "vlc-[0-9.]+-win64\\.exe"
+      }
+    },
+    {
+      "name": "Wireshark",
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://www.wireshark.org/download.html"
+        ],
+        "filename_regex": "Wireshark-[0-9.]+-x64\\.exe"
+      },
+      "enabled": true
+    },
+    {
+      "name": "WinSCP",
+      "extension": ".exe",
+      "source": {
+        "type": "page",
+        "pages": [
+          "https://winscp.net/eng/download.php"
+        ],
+        "filename_regex": "WinSCP-[0-9.]+-Setup\\.exe"
+      },
+      "enabled": true
+    },
+    {
+      "name": "Visual C++ Redistributable x64",
+      "enabled": true,
+      "extension": ".exe",
+      "source": {
+        "type": "direct",
+        "url": "https://aka.ms/vc14/vc_redist.x64.exe"
+      }
+    }
+  ]
+}
